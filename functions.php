@@ -37,3 +37,9 @@ function remove_my_action(){
 	
 	remove_action( 'storefront_header', 'storefront_header_cart', 60 );
 }
+
+//add_filter( 'woocommerce_single_product_image_thumbnail_html', 'add_class_to_thumbs', 10, 2 );
+function add_class_to_thumbs( $html, $attachment_id ) {
+	
+	return wp_get_attachment_image($attachment_id, 'shop_thumbnail');
+}
